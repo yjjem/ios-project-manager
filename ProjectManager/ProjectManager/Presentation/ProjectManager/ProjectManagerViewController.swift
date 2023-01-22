@@ -79,6 +79,7 @@ final class ProjectManagerViewController: UIViewController {
     // MARK: ViewModel
     
     let viewModel = ProjectManagerViewModel()
+    let addTaskView = AddTaskViewController()
     let disposeBag = DisposeBag()
     
     // MARK: ViewDidLoad
@@ -90,7 +91,6 @@ final class ProjectManagerViewController: UIViewController {
         configureView()
         combineViews()
         bindViewModel()
-        bindTagSwitching()
     }
 }
 
@@ -114,16 +114,8 @@ extension ProjectManagerViewController {
     
     @objc
     private func tapNavigationAddButton() {
-        let rootView = AddTaskViewController()
-        let view = UINavigationController(rootViewController: rootView)
+        let view = UINavigationController(rootViewController: addTaskView)
         view.modalPresentationStyle = .formSheet
-        
-        rootView.subject
-            .bind(onNext: {
-                self.viewModel.addTask(task: $0)
-            })
-            .disposed(by: disposeBag)
-        
         self.present(view, animated: true)
     }
 }
@@ -143,65 +135,14 @@ extension ProjectManagerViewController: UITableViewDelegate {
         self.present(view, animated: true)
     }
     
-    // TODO: Gestures
-    
-    private func bindTagSwitching() {
-        todoTableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] index in
-                guard let self = self else { return }
-                guard let cell = self.todoTableView.cellForRow(at: index) else { return }
-                self.popOver(cell: cell, item: self.viewModel.tasks[index.row])
-            })
-            .disposed(by: disposeBag)
-    }
-    
     private func bindViewModel() {
         
-        todoTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        viewModel.subject
-            .share()
-            .map { $0.filter { $0.tag == .todo } }
-            .bind(to: todoTableView.rx.items) { tableview, row, item in
-                self.todoStatusView.setUpCount(count: tableview.numberOfRows(inSection: .zero))
-                guard let cell = tableview.dequeueReusableCell(withIdentifier: "task") as? TaskCell
-                else {
-                    return TaskCell()
-                }
-                cell.setUp(with: item)
-                return cell
-            }
-            .disposed(by: disposeBag)
-        
-        doingTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        viewModel.subject
-            .share()
-            .map { $0.filter { $0.tag == .doing } }
-            .bind(to: doingTableView.rx.items) { tableview, row, item in
-                self.doingStatusView.setUpCount(count: tableview.numberOfRows(inSection: .zero))
-                guard let cell = tableview.dequeueReusableCell(withIdentifier: "task") as? TaskCell
-                else {
-                    return TaskCell()
-                }
-                cell.setUp(with: item)
-                return cell
-            }
-            .disposed(by: disposeBag)
-        
-        doneTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        viewModel.subject
-            .share()
-            .map { $0.filter { $0.tag == .done } }
-            .bind(to: doneTableView.rx.items) { tableview, row, item in
-                self.doneStatusView.setUpCount(count: tableview.numberOfRows(inSection: .zero))
-                guard let cell = tableview.dequeueReusableCell(withIdentifier: "task") as? TaskCell
-                else {
-                    return TaskCell()
-                }
-                cell.setUp(with: item)
-                return cell
-            }
-            .disposed(by: disposeBag)
-        
+        let viewWillAppear = self.rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        // TODO: add created trigger
+//        let input = ProjectManagerViewModel.Input(updateTrigger: viewWillAppear,
+//                                                  createTrigger: createdTrigger)
+//        let output = viewModel.transform(input: input)
+                                                
     }
     
 }
