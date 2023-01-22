@@ -25,6 +25,7 @@
 		DFCA28422977DFBE00C1EBF2 /* TaskStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCA28412977DFBE00C1EBF2 /* TaskStatusView.swift */; };
 		DFDDB649297D4FEF00C14CE2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB648297D4FEF00C14CE2 /* ViewModelType.swift */; };
 		DFDDB64B297D648800C14CE2 /* TaskUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB64A297D648800C14CE2 /* TaskUseCase.swift */; };
+		DFDDB64D297D68C000C14CE2 /* TaskItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		DFCA28412977DFBE00C1EBF2 /* TaskStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusView.swift; sourceTree = "<group>"; };
 		DFDDB648297D4FEF00C14CE2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		DFDDB64A297D648800C14CE2 /* TaskUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUseCase.swift; sourceTree = "<group>"; };
+		DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +113,8 @@
 		DF468291297798DA00E3BC06 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				DF46828D2977974D00E3BC06 /* Entities */,
 				DFDDB64A297D648800C14CE2 /* TaskUseCase.swift */,
+				DF46828D2977974D00E3BC06 /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -151,6 +153,7 @@
 				DFCA283E2977C3BC00C1EBF2 /* TaskCell.swift */,
 				C7431F0925F51E1D0094C4CF /* ProjectManagerViewController.swift */,
 				DF4682982977A85A00E3BC06 /* ProjectManagerViewModel.swift */,
+				DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */,
 			);
 			path = ProjectManager;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				DFDDB64B297D648800C14CE2 /* TaskUseCase.swift in Sources */,
 				DF155098297820CA00A7FDC7 /* AddTaskViewController.swift in Sources */,
 				DFCA28422977DFBE00C1EBF2 /* TaskStatusView.swift in Sources */,
+				DFDDB64D297D68C000C14CE2 /* TaskItemViewModel.swift in Sources */,
 				DF4682992977A85A00E3BC06 /* ProjectManagerViewModel.swift in Sources */,
 				C7431F0A25F51E1D0094C4CF /* ProjectManagerViewController.swift in Sources */,
 				C7431F0625F51E1D0094C4CF /* AppDelegate.swift in Sources */,

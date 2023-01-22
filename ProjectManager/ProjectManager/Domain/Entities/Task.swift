@@ -8,10 +8,10 @@
 import Foundation
 
 struct Task {
-    var title: String?
-    var description: String?
-    var expireDate: Date?
-    var tag: Status?
+    var title: String
+    var description: String
+    var expireDate: Date
+    var tag: Status
 }
 
 enum Status {

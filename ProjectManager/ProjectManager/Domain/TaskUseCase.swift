@@ -7,8 +7,8 @@
 
 import RxSwift
 
-protocol TaskUseCas {
-    func tasks() -> Observable<[Task]>
+protocol TaskUseCase {
+    func getTasks() -> Observable<[Task]>
     func update(task: Task) -> Observable<Void>
     func delete(task: Task) -> Observable<Void>   
 }
