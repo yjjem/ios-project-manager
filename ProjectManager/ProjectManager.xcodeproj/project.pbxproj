@@ -13,7 +13,7 @@
 		C7431F0F25F51E1E0094C4CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7431F0E25F51E1E0094C4CF /* Assets.xcassets */; };
 		C7431F1225F51E1E0094C4CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7431F1025F51E1E0094C4CF /* LaunchScreen.storyboard */; };
 		DF155098297820CA00A7FDC7 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF155097297820CA00A7FDC7 /* AddTaskViewController.swift */; };
-		DF1550A8297957F900A7FDC7 /* TaskSwitchPopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1550A7297957F900A7FDC7 /* TaskSwitchPopOverView.swift */; };
+		DF1550A8297957F900A7FDC7 /* TaskSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1550A7297957F900A7FDC7 /* TaskSwitchViewController.swift */; };
 		DF46828F2977977700E3BC06 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF46828E2977977700E3BC06 /* Task.swift */; };
 		DF4682992977A85A00E3BC06 /* ProjectManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4682982977A85A00E3BC06 /* ProjectManagerViewModel.swift */; };
 		DF5CAE65296D52B900398676 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DF5CAE64296D52B900398676 /* RxCocoa */; };
@@ -26,6 +26,12 @@
 		DFDDB649297D4FEF00C14CE2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB648297D4FEF00C14CE2 /* ViewModelType.swift */; };
 		DFDDB64B297D648800C14CE2 /* TaskUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB64A297D648800C14CE2 /* TaskUseCase.swift */; };
 		DFDDB64D297D68C000C14CE2 /* TaskItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */; };
+		DFDDB64F297E524400C14CE2 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB64E297E524400C14CE2 /* AddTaskViewModel.swift */; };
+		DFDDB651297E59A700C14CE2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB650297E59A700C14CE2 /* DataSource.swift */; };
+		DFDDB654297E745F00C14CE2 /* Date + converted.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB653297E745F00C14CE2 /* Date + converted.swift */; };
+		DFDDB656297E846300C14CE2 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB655297E846300C14CE2 /* EditTaskViewController.swift */; };
+		DFDDB658297E849C00C14CE2 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB657297E849C00C14CE2 /* EditTaskViewModel.swift */; };
+		DFDDB65B297F953A00C14CE2 /* TasjkSwitchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDB65A297F953A00C14CE2 /* TasjkSwitchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +43,7 @@
 		C7431F1125F51E1E0094C4CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7431F1325F51E1E0094C4CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF155097297820CA00A7FDC7 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		DF1550A7297957F900A7FDC7 /* TaskSwitchPopOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSwitchPopOverView.swift; sourceTree = "<group>"; };
+		DF1550A7297957F900A7FDC7 /* TaskSwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSwitchViewController.swift; sourceTree = "<group>"; };
 		DF46828E2977977700E3BC06 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		DF4682982977A85A00E3BC06 /* ProjectManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectManagerViewModel.swift; sourceTree = "<group>"; };
 		DFCA283E2977C3BC00C1EBF2 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
@@ -45,6 +51,12 @@
 		DFDDB648297D4FEF00C14CE2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		DFDDB64A297D648800C14CE2 /* TaskUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUseCase.swift; sourceTree = "<group>"; };
 		DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItemViewModel.swift; sourceTree = "<group>"; };
+		DFDDB64E297E524400C14CE2 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		DFDDB650297E59A700C14CE2 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		DFDDB653297E745F00C14CE2 /* Date + converted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + converted.swift"; sourceTree = "<group>"; };
+		DFDDB655297E846300C14CE2 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
+		DFDDB657297E849C00C14CE2 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
+		DFDDB65A297F953A00C14CE2 /* TasjkSwitchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasjkSwitchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +94,7 @@
 		C7431F0425F51E1D0094C4CF /* ProjectManager */ = {
 			isa = PBXGroup;
 			children = (
+				DFDDB652297E742500C14CE2 /* Utilities */,
 				DFDDB647297D4FE700C14CE2 /* Common */,
 				DF4682942977994300E3BC06 /* Resources */,
 				DF4682932977992F00E3BC06 /* Application */,
@@ -103,9 +116,10 @@
 		DF468290297798D400E3BC06 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DFDDB659297F803300C14CE2 /* TaskSwitchView */,
 				DFDDB646297D4EEE00C14CE2 /* EditTaskView */,
 				DFDDB645297D4EE900C14CE2 /* AddTaskView */,
-				DF4682952977A72700E3BC06 /* ProjectManager */,
+				DF4682952977A72700E3BC06 /* ProjectManagerView */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -122,6 +136,7 @@
 		DF468292297798F000E3BC06 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DFDDB650297E59A700C14CE2 /* DataSource.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -145,23 +160,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		DF4682952977A72700E3BC06 /* ProjectManager */ = {
+		DF4682952977A72700E3BC06 /* ProjectManagerView */ = {
 			isa = PBXGroup;
 			children = (
-				DF1550A7297957F900A7FDC7 /* TaskSwitchPopOverView.swift */,
 				DFCA28412977DFBE00C1EBF2 /* TaskStatusView.swift */,
 				DFCA283E2977C3BC00C1EBF2 /* TaskCell.swift */,
+				DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */,
 				C7431F0925F51E1D0094C4CF /* ProjectManagerViewController.swift */,
 				DF4682982977A85A00E3BC06 /* ProjectManagerViewModel.swift */,
-				DFDDB64C297D68C000C14CE2 /* TaskItemViewModel.swift */,
 			);
-			path = ProjectManager;
+			path = ProjectManagerView;
 			sourceTree = "<group>";
 		};
 		DFDDB645297D4EE900C14CE2 /* AddTaskView */ = {
 			isa = PBXGroup;
 			children = (
 				DF155097297820CA00A7FDC7 /* AddTaskViewController.swift */,
+				DFDDB64E297E524400C14CE2 /* AddTaskViewModel.swift */,
 			);
 			path = AddTaskView;
 			sourceTree = "<group>";
@@ -169,6 +184,8 @@
 		DFDDB646297D4EEE00C14CE2 /* EditTaskView */ = {
 			isa = PBXGroup;
 			children = (
+				DFDDB655297E846300C14CE2 /* EditTaskViewController.swift */,
+				DFDDB657297E849C00C14CE2 /* EditTaskViewModel.swift */,
 			);
 			path = EditTaskView;
 			sourceTree = "<group>";
@@ -179,6 +196,23 @@
 				DFDDB648297D4FEF00C14CE2 /* ViewModelType.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		DFDDB652297E742500C14CE2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DFDDB653297E745F00C14CE2 /* Date + converted.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DFDDB659297F803300C14CE2 /* TaskSwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				DF1550A7297957F900A7FDC7 /* TaskSwitchViewController.swift */,
+				DFDDB65A297F953A00C14CE2 /* TasjkSwitchViewModel.swift */,
+			);
+			path = TaskSwitchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,18 +295,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFDDB651297E59A700C14CE2 /* DataSource.swift in Sources */,
 				DF46828F2977977700E3BC06 /* Task.swift in Sources */,
 				DFDDB64B297D648800C14CE2 /* TaskUseCase.swift in Sources */,
+				DFDDB64F297E524400C14CE2 /* AddTaskViewModel.swift in Sources */,
 				DF155098297820CA00A7FDC7 /* AddTaskViewController.swift in Sources */,
 				DFCA28422977DFBE00C1EBF2 /* TaskStatusView.swift in Sources */,
+				DFDDB654297E745F00C14CE2 /* Date + converted.swift in Sources */,
 				DFDDB64D297D68C000C14CE2 /* TaskItemViewModel.swift in Sources */,
 				DF4682992977A85A00E3BC06 /* ProjectManagerViewModel.swift in Sources */,
 				C7431F0A25F51E1D0094C4CF /* ProjectManagerViewController.swift in Sources */,
 				C7431F0625F51E1D0094C4CF /* AppDelegate.swift in Sources */,
-				DF1550A8297957F900A7FDC7 /* TaskSwitchPopOverView.swift in Sources */,
+				DF1550A8297957F900A7FDC7 /* TaskSwitchViewController.swift in Sources */,
 				C7431F0825F51E1D0094C4CF /* SceneDelegate.swift in Sources */,
+				DFDDB658297E849C00C14CE2 /* EditTaskViewModel.swift in Sources */,
+				DFDDB65B297F953A00C14CE2 /* TasjkSwitchViewModel.swift in Sources */,
 				DFDDB649297D4FEF00C14CE2 /* ViewModelType.swift in Sources */,
 				DFCA283F2977C3BC00C1EBF2 /* TaskCell.swift in Sources */,
+				DFDDB656297E846300C14CE2 /* EditTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

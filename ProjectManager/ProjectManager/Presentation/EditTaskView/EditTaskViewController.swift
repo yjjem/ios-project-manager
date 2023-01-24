@@ -1,5 +1,5 @@
 //
-//  AddTaskViewController.swift
+//  EditTaskViewController.swift
 //  ProjectManager
 //
 //  Copyright (c) 2023 Jeremy All rights reserved.
@@ -8,15 +8,16 @@
 import UIKit
 import RxSwift
 
-final class AddTaskViewController: UIViewController {
+final class EditTaskViewController: UIViewController {
     
-    var viewmodel: AddTaskViewModel?
+    var viewmodel: EditTaskViewModel?
     let disposeBag = DisposeBag()
     // MARK: Subview
     
     private var titleTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isEditable = false
         return textView
     }()
     private var datePickerView: UIDatePicker = {
@@ -26,11 +27,13 @@ final class AddTaskViewController: UIViewController {
         picker.minimumDate = Date()
         picker.maximumDate = .distantFuture
         picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.isEnabled = false
         return picker
     }()
     private var descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isEditable = false
         return textView
     }()
     
@@ -41,32 +44,55 @@ final class AddTaskViewController: UIViewController {
         
         configureNavigationBar()
         configureViewLayout()
+        insertData()
         bind()
     }
 }
 
 // MARK: Functions
 
-extension AddTaskViewController {
+extension EditTaskViewController {
+    
+    func insertData() {
+        guard let viewmodel = self.viewmodel else { return }
+        self.titleTextView.text = viewmodel.title
+        self.datePickerView.date = viewmodel.date
+        self.descriptionTextView.text = viewmodel.description
+    }
     
     func bind() {
         guard let viewmodel = self.viewmodel,
-              let button = navigationItem.rightBarButtonItem else { return }
-        let done = button.rx.tap.asObservable()
+              let doneButton = navigationItem.rightBarButtonItem,
+              let editButton = navigationItem.leftBarButtonItem else { return }
+        let edit = editButton.rx.tap.asObservable()
+        let done = doneButton.rx.tap.asObservable()
             .debug()
         let title = titleTextView.rx.text.orEmpty.filter { !$0.isEmpty }.asObservable()
         let description = descriptionTextView.rx.text.orEmpty.filter { !$0.isEmpty }.asObservable()
         let date = datePickerView.rx.date.asObservable()
-        let input = AddTaskViewModel.Input(doneTrigger: done,
+        let input = EditTaskViewModel.Input(editTrigger: edit,
+                                           doneTrigger: done,
                                            titleTrigger: title,
                                            descriptionTrigger: description,
                                            dateTrigger: date)
         let output = viewmodel.transform(input: input)
-        output.createdTask
+        output.canEdit
             .subscribe(onNext: { _ in
-                self.tapDoneButton()
+                self.toggleEditability()
             })
             .disposed(by: disposeBag)
+        
+        output.editedTask
+            .subscribe(onNext: { _ in
+                self.dismissView()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func toggleEditability() {
+        self.titleTextView.isEditable.toggle()
+        self.datePickerView.isEnabled.toggle()
+        self.descriptionTextView.isEditable.toggle()
     }
     
     private func configureNavigationBar() {
@@ -74,27 +100,20 @@ extension AddTaskViewController {
         self.navigationController?.navigationBar.backgroundColor = .systemGray3
         let rightButton = UIBarButtonItem(barButtonSystemItem: .done,
                                           target: self, action: nil)
-        let leftButton = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                         target: self, action: #selector(tapCancelButton))
+        let leftButton = UIBarButtonItem(barButtonSystemItem: .edit,
+                                         target: self, action: nil)
         self.navigationItem.rightBarButtonItem = rightButton
         self.navigationItem.leftBarButtonItem = leftButton
     }
     
-    @objc
-    private func tapCancelButton() {
-        // TODO: Add action
-        self.dismiss(animated: true)
-    }
-    
-    private func tapDoneButton() {
-        // TODO: Add action
+    private func dismissView() {
         self.dismiss(animated: true)
     }
 }
 
 // MARK: Layout
 
-extension AddTaskViewController {
+extension EditTaskViewController {
     private func configureViewLayout() {
         view.backgroundColor = .white
         view.addSubview(titleTextView)
